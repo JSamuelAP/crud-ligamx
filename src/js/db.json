@@ -1,0 +1,16 @@
+{
+	"equipos": [
+		{
+			"id": 1,
+			"nombre": "Club América",
+			"ciudad": "Ciudad de México",
+			"titulos": 13
+		},
+		{
+			"id": 2,
+			"nombre": "Club León",
+			"ciudad": "León",
+			"titulos": 8
+		}
+	]
+}
