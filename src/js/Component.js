@@ -1,25 +1,24 @@
 /**
  * Create a component
- * @param {function} options
  * @class
  * @classdesc Class to create a reactive component.
- * @returns {Object}
+ * @param {Object} options
+ * @type {String} el Element ID
+ * @type {Object} data State
+ * @type {function} template Function to create the inner HTML element
+ * @example
+ *  new Component({
+ *    el: "#button",
+ *    data: {value: 'Show'},
+ *    template: function (props) {
+ *      return `<span>${props.value}</span>`
+ *    }
+ *  })
  */
 const Component = (function () {
 	/**
 	 * @constructs
 	 * @param {Object} options
-	 * @type {String} el Element ID
-	 * @type {Object} data State
-	 * @type {function} template Function to create the inner HTML element
-	 * @example
-	 *  new Component({
-	 *    el: "#button",
-	 *    data: {value: 'Show'},
-	 *    template: function (props) {
-	 *      return `<span>${props.value}</span>`
-	 *    }
-	 *  })
 	 */
 	const Constructor = function (options) {
 		this.el = options.el;
