@@ -3,12 +3,21 @@ import printTeams from "./printData";
 import Component from "./Component";
 
 const Table = new Component({
-	el: "#teams-table tbody",
+	el: "#teams-info",
 	data: {
 		teamsList: [],
 	},
 	template: function (props) {
-		let teams = props.teamsList
+		if (props.teamsList.length === 0) {
+			return `
+        <div class="text-center font-bold py-5">
+          <p class="text-4xl text-slate-500">Aun no hay equipos aquí</p>
+          <p class="text-3xl text-slate-400">Comienza a registrar</p>
+        </div>
+      `;
+		}
+
+		let teamsRows = props.teamsList
 			.map(
 				(team) => `
           <tr class="border-b">
@@ -27,7 +36,22 @@ const Table = new Component({
     `
 			)
 			.join("");
-		return teams;
+
+		const teamsTable = `
+      <table class="table-auto w-full text-left">
+        <thead class="bg-slate-50 rounded-t-sm">
+          <tr class="border-b">
+            <th scope="col" class="p-4 min-w-max">Nombre</th>
+            <th scope="col" class="p-4 min-w-max">Ciudad</th>
+            <th scope="col" class="p-4 min-w-max">Titulos</th>
+            <th scope="col" class="p-4 min-w-max">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>${teamsRows}</tbody>
+      </table>
+    `;
+
+		return teamsTable;
 	},
 });
 
