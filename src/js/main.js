@@ -2,7 +2,7 @@ import getTeams from "./getData";
 import printTeams from "./printData";
 import Component from "./Component";
 
-const table = new Component({
+const Table = new Component({
 	el: "#teams-table tbody",
 	data: {
 		teamsList: [],
@@ -12,9 +12,9 @@ const table = new Component({
 			.map(
 				(team) => `
           <tr class="border-b">
-            <td class="p-4 whitespace-nowrap">${team.nombre}</td>
-            <td class="p-4 whitespace-nowrap text-slate-500">${team.ciudad}</td>
-            <td class="p-4 text-slate-500">${team.titulos}</td>
+            <td class="p-4 whitespace-nowrap">${team.name}</td>
+            <td class="p-4 whitespace-nowrap text-slate-500">${team.city}</td>
+            <td class="p-4 text-slate-500">${team.titles}</td>
             <td class="p-4 whitespace-nowrap">
               <button
                 class="bg-sky-500 hover:bg-sky-600 py-1 px-4 rounded-sm text-white mr-4"
@@ -36,4 +36,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 	printTeams(teams);
 });
 
-export default table;
+export default Table;

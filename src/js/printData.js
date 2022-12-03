@@ -1,8 +1,7 @@
-import table from "./main.js";
+import Table from "./main.js";
 
 const printTeams = (teams) => {
-	table.setState({ teamsList: teams });
-	console.log(table);
+	Table.setState({ teamsList: teams });
 };
 
 export default printTeams;

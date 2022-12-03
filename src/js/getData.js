@@ -4,7 +4,7 @@
  */
 const getTeams = async () => {
 	try {
-		const res = await fetch("http://localhost:3000/equipos");
+		const res = await fetch("http://localhost:3000/teams");
 		const data = await res.json();
 
 		if (!res.ok) {
