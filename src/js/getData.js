@@ -1,3 +1,7 @@
+/**
+ * fetch the teams from the API
+ * @returns An array of team objects
+ */
 const getTeams = async () => {
 	try {
 		const res = await fetch("http://localhost:3000/equipos");
