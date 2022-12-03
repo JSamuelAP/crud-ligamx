@@ -4,7 +4,7 @@
  */
 const getTeams = async () => {
 	try {
-		const res = await fetch("http://localhost:3000/teams");
+		const res = await fetch("http://localhost:3000/team");
 		const data = await res.json();
 
 		if (!res.ok) {
@@ -14,7 +14,7 @@ const getTeams = async () => {
 
 		return data;
 	} catch (error) {
-		console.error(error);
+		return error;
 	}
 };
 

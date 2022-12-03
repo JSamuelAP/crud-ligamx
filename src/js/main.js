@@ -6,8 +6,17 @@ const Table = new Component({
 	el: "#teams-info",
 	data: {
 		teamsList: [],
+		error: "",
 	},
 	template: function (props) {
+		if (props.error) {
+			return `
+        <div class="text-center font-bold py-7 bg-red-100 rounded-sm border-2 border-red-200">
+          <p class="text-4xl text-red-400">${props.error}</p>
+        </div>
+      `;
+		}
+
 		if (props.teamsList.length === 0) {
 			return `
         <div class="text-center font-bold py-5">
