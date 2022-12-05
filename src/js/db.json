@@ -1,3 +1,34 @@
 {
-	"teams": []
+	"teams": [
+		{
+			"name": "Club León",
+			"city": "León",
+			"titles": 8,
+			"id": 1
+		},
+		{
+			"name": "Club América",
+			"city": "Ciudad de México",
+			"titles": 13,
+			"id": 2
+		},
+		{
+			"name": "Deportivo Guadalajara",
+			"city": "Guadalajara",
+			"titles": 12,
+			"id": 3
+		},
+		{
+			"name": "Cruz Azul",
+			"city": "Ciudad de México",
+			"titles": 9,
+			"id": 4
+		},
+		{
+			"name": "Pachucha",
+			"city": "Pachuca",
+			"titles": 7,
+			"id": 5
+		}
+	]
 }
