@@ -10,10 +10,13 @@ const inputName = form.querySelector("#form-name");
 const inputCity = form.querySelector("#form-city");
 const inputTitles = form.querySelector("#form-titles");
 const buttonSubmit = form.querySelector("#form-submit");
+const buttonCancel = form.querySelector("#form-cancel");
 
 let editing = false;
 
 document.addEventListener("DOMContentLoaded", async () => {
+	form.reset();
+
 	const teams = await getTeams();
 	printTeams(teams);
 });
@@ -38,10 +41,6 @@ document.addEventListener("submit", async (e) => {
 	} else {
 		// PUT
 		await putTeam(buttonSubmit.dataset.id, name, city, titles);
-		editing = false;
-		formHeading.innerText = "Registrar un equipo";
-		buttonSubmit.dataset.id = "";
-		buttonSubmit.value = "Crear";
 	}
 
 	form.reset();
@@ -56,10 +55,10 @@ document.addEventListener("click", async (e) => {
 		const teams = await getTeams();
 		const teamEditing = teams.find((team) => team.id == e.target.dataset.id);
 
+		// Enable last disabled delete button
 		// Disable only delete button sibling
-		document
-			.querySelectorAll(".delete-button")
-			.forEach((button) => (button.disabled = false));
+		const buttonDisabled = document.querySelector(".delete-button[disabled]");
+		if (buttonDisabled) buttonDisabled.disabled = false;
 		e.target.nextElementSibling.disabled = true;
 
 		// Prepare form
@@ -69,6 +68,7 @@ document.addEventListener("click", async (e) => {
 		inputTitles.value = teamEditing.titles;
 		buttonSubmit.dataset.id = teamEditing.id;
 		buttonSubmit.value = "Actualizar";
+		buttonCancel.classList.remove("hidden");
 		scrollTo({
 			behavior: "smooth",
 			top: 0,
@@ -83,4 +83,17 @@ document.addEventListener("click", async (e) => {
 		// DELETE
 		if (deleteConfirmed) await deleteTeam(e.target.dataset.id);
 	}
+});
+
+document.addEventListener("reset", (e) => {
+	if (e.target !== form) return;
+	editing = false;
+	buttonCancel.classList.add("hidden");
+	formHeading.innerText = "Registrar un equipo";
+	buttonSubmit.dataset.id = "";
+	buttonSubmit.value = "Crear";
+
+	// If some delete button is disabled, enable it
+	const buttonDisabled = document.querySelector(".delete-button[disabled]");
+	if (buttonDisabled) buttonDisabled.disabled = false;
 });
