@@ -33,10 +33,12 @@ const Table = new Component({
             <td class="p-4 text-slate-500">${team.titles}</td>
             <td class="p-4 whitespace-nowrap">
               <button
-                class="bg-sky-500 hover:bg-sky-600 py-1 px-4 rounded-sm text-white mr-4"
+                class="edit-button bg-sky-500 hover:bg-sky-600 py-1 px-4 rounded-sm text-white mr-4"
+                data-id="${team.id}"
               >Editar</button>
               <button
-                class="bg-red-500 hover:bg-red-700 py-1 px-4 rounded-sm text-white"
+                class="delete-button bg-red-500 hover:bg-red-700 py-1 px-4 rounded-sm text-white"
+                data-id="${team.id}"
               >Eliminar</button>
             </td>
           </tr>
