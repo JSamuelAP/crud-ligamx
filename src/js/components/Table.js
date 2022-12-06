@@ -37,7 +37,7 @@ const Table = new Component({
                 data-id="${team.id}"
               >Editar</button>
               <button
-                class="delete-button bg-red-500 hover:bg-red-700 py-1 px-4 rounded-sm text-white"
+                class="delete-button bg-red-500 hover:bg-red-700 py-1 px-4 rounded-sm text-white disabled:bg-red-300"
                 data-id="${team.id}"
               >Eliminar</button>
             </td>

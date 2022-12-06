@@ -56,6 +56,12 @@ document.addEventListener("click", async (e) => {
 		const teams = await getTeams();
 		const teamEditing = teams.find((team) => team.id == e.target.dataset.id);
 
+		// Disable only delete button sibling
+		document
+			.querySelectorAll(".delete-button")
+			.forEach((button) => (button.disabled = false));
+		e.target.nextElementSibling.disabled = true;
+
 		// Prepare form
 		formHeading.innerText = "Edita un equipo";
 		inputName.value = teamEditing.name;
@@ -68,10 +74,10 @@ document.addEventListener("click", async (e) => {
 			top: 0,
 			left: 0,
 		});
-		// Click on Deltebutton
+		// Click on Delte button
 	} else if (e.target.matches(".delete-button")) {
 		const deleteConfirmed = confirm(
-			`¿Estás seguro de eliinar el equipo con id ${e.target.dataset.id}?`
+			`¿Estás seguro de eliminar el equipo con id ${e.target.dataset.id}?`
 		);
 
 		// DELETE
