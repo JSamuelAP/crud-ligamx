@@ -47,6 +47,9 @@ document.addEventListener("submit", async (e) => {
 		}
 
 		Alert.setState({ ...alertData });
+		setTimeout(() => {
+			Alert.setState({ message: "", type: "" });
+		}, 3000);
 	} else {
 		// PUT
 		await putTeam(buttonSubmit.dataset.id, name, city, titles);

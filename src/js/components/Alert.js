@@ -7,7 +7,9 @@ const Alert = new Component({
 		type: "",
 	},
 	template: function (props) {
-		if (props.type === "error") {
+		if (!props.type) {
+			return "";
+		} else if (props.type === "error") {
 			return `
         <div class="text-center font-bold py-7 bg-red-100 rounded-sm border-2 border-red-200">
           <p class="text-4xl text-red-400">${props.message}</p>
