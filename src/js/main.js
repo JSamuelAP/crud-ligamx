@@ -3,6 +3,7 @@ import printTeams from "./printData.js";
 import postTeam from "./postData.js";
 import putTeam from "./putData.js";
 import deleteTeam from "./deleteData.js";
+import Alert from "./components/Alert.js";
 
 const formHeading = document.querySelector("#form-heading");
 const form = document.querySelector("#form form");
@@ -37,7 +38,15 @@ document.addEventListener("submit", async (e) => {
 
 	if (!editing) {
 		// POST
-		await postTeam(name, city, titles);
+		let alertData = { message: undefined, type: undefined };
+		try {
+			const res = await postTeam(name, city, titles);
+			alertData = { message: res, type: "success" };
+		} catch (error) {
+			alertData = { message: error, type: "error" };
+		}
+
+		Alert.setState({ ...alertData });
 	} else {
 		// PUT
 		await putTeam(buttonSubmit.dataset.id, name, city, titles);
