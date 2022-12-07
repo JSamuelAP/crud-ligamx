@@ -16,8 +16,12 @@ const deteleTeam = async (id) => {
 		}
 
 		printTeams(await getTeams());
+
+		return new Promise((resolve, reject) =>
+			resolve("Equipo eliminado con éxito")
+		);
 	} catch (error) {
-		return error;
+		return new Promise((resolve, reject) => reject(`Error: ${error.message}`));
 	}
 };
 

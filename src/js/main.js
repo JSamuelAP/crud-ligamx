@@ -98,7 +98,14 @@ document.addEventListener("click", async (e) => {
 		);
 
 		// DELETE
-		if (deleteConfirmed) await deleteTeam(e.target.dataset.id);
+		if (deleteConfirmed) {
+			try {
+				const res = await deleteTeam(e.target.dataset.id);
+				alert(res);
+			} catch (error) {
+				alert(error);
+			}
+		}
 	}
 });
 
