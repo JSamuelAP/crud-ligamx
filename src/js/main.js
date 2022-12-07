@@ -29,6 +29,7 @@ document.addEventListener("submit", async (e) => {
 	const name = inputName.value.trim();
 	const city = inputCity.value.trim();
 	const titles = +inputTitles.value;
+	let alertData = { message: undefined, type: undefined };
 
 	// Some field is empty
 	if (!name || !city) {
@@ -38,24 +39,28 @@ document.addEventListener("submit", async (e) => {
 
 	if (!editing) {
 		// POST
-		let alertData = { message: undefined, type: undefined };
 		try {
 			const res = await postTeam(name, city, titles);
 			alertData = { message: res, type: "success" };
 		} catch (error) {
 			alertData = { message: error, type: "error" };
 		}
-
-		Alert.setState({ ...alertData });
-		setTimeout(() => {
-			Alert.setState({ message: "", type: "" });
-		}, 3000);
 	} else {
 		// PUT
-		await putTeam(buttonSubmit.dataset.id, name, city, titles);
+		try {
+			const res = await putTeam(buttonSubmit.dataset.id, name, city, titles);
+			alertData = { message: res, type: "success" };
+		} catch (error) {
+			alertData = { message: error, type: "error" };
+		}
 	}
 
 	form.reset();
+	// Remove alert after 3 seconds
+	Alert.setState({ ...alertData });
+	setTimeout(() => {
+		Alert.setState({ message: "", type: "" });
+	}, 3000);
 });
 
 document.addEventListener("click", async (e) => {

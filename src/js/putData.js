@@ -17,8 +17,11 @@ const putTeam = async (id, name, city, titles) => {
 		}
 
 		printTeams(await getTeams());
+		return new Promise((resolve, reject) =>
+			resolve("Equipo actualizado con éxito")
+		);
 	} catch (error) {
-		return error;
+		return new Promise((resolve, reject) => reject(`Error: ${error.message}`));
 	}
 };
 
