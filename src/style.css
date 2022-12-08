@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#form-submit,
+#form-cancel {
+	background-size: 1rem;
+	background-repeat: no-repeat;
+	background-position: 1.5rem center;
+}
+input.create-icon {
+	background-image: url("images/plus.svg");
+}
+input.update-icon {
+	background-image: url("images/arrows-rotate.svg");
+}
+#form-cancel {
+	background-image: url("images/ban.svg");
+}

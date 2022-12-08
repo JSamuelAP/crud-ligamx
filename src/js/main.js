@@ -84,6 +84,7 @@ document.addEventListener("click", async (e) => {
 		inputCity.value = teamEditing.city;
 		inputTitles.value = teamEditing.titles;
 		buttonSubmit.dataset.id = teamEditing.id;
+		buttonSubmit.classList.replace("create-icon", "update-icon");
 		buttonSubmit.value = "Actualizar";
 		buttonCancel.classList.remove("hidden");
 		scrollTo({
@@ -115,6 +116,7 @@ document.addEventListener("reset", (e) => {
 	buttonCancel.classList.add("hidden");
 	formHeading.innerText = "Registrar un equipo";
 	buttonSubmit.dataset.id = "";
+	buttonSubmit.classList.replace("update-icon", "create-icon");
 	buttonSubmit.value = "Crear";
 
 	// If some delete button is disabled, enable it
