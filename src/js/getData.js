@@ -1,8 +1,11 @@
+import Spinner from "./components/Spinner.js";
+
 /**
  * fetch the teams from the API
  * @returns An array of team objects
  */
 const getTeams = async () => {
+	Spinner.setState({ active: true });
 	try {
 		const res = await fetch("http://localhost:3000/teams");
 		const data = await res.json();
@@ -15,6 +18,8 @@ const getTeams = async () => {
 		return data;
 	} catch (error) {
 		return error;
+	} finally {
+		Spinner.setState({ active: false });
 	}
 };
 
