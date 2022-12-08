@@ -64,7 +64,7 @@ const Table = new Component({
       <table class="table-auto w-full text-left">
         <thead class="bg-slate-50 rounded-t-sm">
           <tr class="border-b">
-            <th scope="col" class="p-4 min-w-max">
+            <th scope="col" class="p-4 min-w-max whitespace-nowrap">
               Nombre
               <img
                 src="src/images/shield.svg"
@@ -72,7 +72,7 @@ const Table = new Component({
                 class="h-4 inline align-baseline ml-1"
               />
             </th>
-            <th scope="col" class="p-4 min-w-max">
+            <th scope="col" class="p-4 min-w-max whitespace-nowrap">
               Ciudad
               <img
                 src="src/images/location-dot.svg"
@@ -80,7 +80,7 @@ const Table = new Component({
                 class="h-4 inline align-baseline ml-1"
               />
             </th>
-            <th scope="col" class="p-4 min-w-max">
+            <th scope="col" class="p-4 min-w-max whitespace-nowrap">
               Titulos
               <img
                 src="src/images/trophy.svg"
@@ -88,7 +88,7 @@ const Table = new Component({
                 class="h-4 inline align-baseline ml-1"
               />
             </th>
-            <th scope="col" class="p-4 min-w-max">Acciones</th>
+            <th scope="col" class="p-4 min-w-max whitespace-nowrap">Acciones</th>
           </tr>
         </thead>
         <tbody>${teamsRows}</tbody>
