@@ -17,6 +17,12 @@
       "city": "Guadalajara",
       "titles": 12,
       "id": 3
+    },
+    {
+      "name": "Juarez FC",
+      "city": "Ciudad Juarez",
+      "titles": 0,
+      "id": 4
     }
   ]
 }

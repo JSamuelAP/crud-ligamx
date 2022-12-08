@@ -56,8 +56,8 @@ document.addEventListener("submit", async (e) => {
 	}
 
 	form.reset();
-	// Remove alert after 3 seconds
 	Alert.setState({ ...alertData });
+	// Remove alert after 3 seconds
 	setTimeout(() => {
 		Alert.setState({ message: "", type: "" });
 	}, 3000);
