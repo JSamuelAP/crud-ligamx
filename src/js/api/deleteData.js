@@ -1,4 +1,3 @@
-import getTeams from "./getData.js";
 import printTeams from "../ui/printData.js";
 
 const deteleTeam = async (id) => {
@@ -15,7 +14,7 @@ const deteleTeam = async (id) => {
 			throw new Error(msg);
 		}
 
-		printTeams(await getTeams());
+		printTeams();
 
 		return new Promise((resolve, reject) =>
 			resolve("Equipo eliminado con éxito")

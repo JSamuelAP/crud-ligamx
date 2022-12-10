@@ -1,8 +1,8 @@
-import getTeams from "./api/getData.js";
 import printTeams from "./ui/printData.js";
 import postTeam from "./api/postData.js";
 import putTeam from "./api/putData.js";
 import deleteTeam from "./api/deleteData.js";
+import Table from "./components/Table.js";
 import Alert from "./components/Alert.js";
 
 const formHeading = document.querySelector("#form-heading");
@@ -18,8 +18,7 @@ let editing = false;
 document.addEventListener("DOMContentLoaded", async () => {
 	form.reset();
 
-	const teams = await getTeams();
-	printTeams(teams);
+	printTeams();
 });
 
 document.addEventListener("submit", async (e) => {
@@ -69,7 +68,7 @@ document.addEventListener("click", async (e) => {
 		editing = true;
 
 		// Get team to modify
-		const teams = await getTeams();
+		const teams = Table.getState().teamsList;
 		const teamEditing = teams.find((team) => team.id == e.target.dataset.id);
 
 		// Enable last disabled delete button

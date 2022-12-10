@@ -1,4 +1,3 @@
-import getTeams from "./getData.js";
 import printTeams from "../ui/printData.js";
 
 const putTeam = async (id, name, city, titles) => {
@@ -16,7 +15,7 @@ const putTeam = async (id, name, city, titles) => {
 			throw new Error(msg);
 		}
 
-		printTeams(await getTeams());
+		printTeams();
 		return new Promise((resolve, reject) =>
 			resolve("Equipo actualizado con éxito")
 		);

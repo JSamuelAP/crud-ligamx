@@ -1,16 +1,16 @@
+import getTeams from "../api/getData.js";
 import Table from "../components/Table.js";
 
 /**
  * Set the state of the Table component and render it
- * @param teams - an array of teams or a Error
  */
-const printTeams = (teams) => {
-	if (teams instanceof Error) {
-		Table.setState({ teamsList: [], error: teams });
-		return;
+const printTeams = async () => {
+	try {
+		const res = await getTeams();
+		Table.setState({ teamsList: res, error: "" });
+	} catch (error) {
+		Table.setState({ teamsList: [], error });
 	}
-
-	Table.setState({ teamsList: teams, error: "" });
 };
 
 export default printTeams;

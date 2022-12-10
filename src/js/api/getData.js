@@ -15,9 +15,9 @@ const getTeams = async () => {
 			throw new Error(msg);
 		}
 
-		return data;
+		return new Promise((resolve, reject) => resolve(data));
 	} catch (error) {
-		return error;
+		return new Promise((resolve, reject) => reject(error));
 	} finally {
 		Spinner.setState({ active: false });
 	}
