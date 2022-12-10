@@ -1,5 +1,13 @@
 import printTeams from "../ui/printData.js";
 
+/**
+ * It sends a PUT request with the data of the team to be updated
+ * @param {Number} id - The id of the team to update
+ * @param {String} name - The name of the team
+ * @param {String} city - The city where the team is based
+ * @param {Number} titles - number of titles won by the team
+ * @returns A promise with a string of the result
+ */
 const putTeam = async (id, name, city, titles) => {
 	try {
 		const options = {

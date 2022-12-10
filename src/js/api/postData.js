@@ -1,5 +1,12 @@
 import printTeams from "../ui/printData.js";
 
+/**
+ * It sends a POST request with the data of the team to be created
+ * @param {String} name - The name of the team
+ * @param {String} city - The city where the team is based
+ * @param {Number} titles - number of titles won by the team
+ * @returns A promise with a string of the result
+ */
 const postTeam = async (name, city, titles) => {
 	try {
 		const options = {

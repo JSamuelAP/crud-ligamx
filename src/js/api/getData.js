@@ -1,8 +1,8 @@
 import Spinner from "../components/Spinner.js";
 
 /**
- * fetch the teams from the API
- * @returns An array of team objects
+ * It sends a GET request to get the list of teams
+ * @returns A promise with the teams objects or an error
  */
 const getTeams = async () => {
 	Spinner.setState({ active: true });

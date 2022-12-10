@@ -1,5 +1,10 @@
 import printTeams from "../ui/printData.js";
 
+/**
+ * It sends a DELETE request with the id of the team to be deleted
+ * @param {Number} id - The id of the team to delete
+ * @returns A promise with a string of the result
+ */
 const deteleTeam = async (id) => {
 	try {
 		const options = {
