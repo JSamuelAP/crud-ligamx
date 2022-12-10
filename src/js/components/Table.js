@@ -28,6 +28,7 @@ const Table = new Component({
 			.map(
 				(team) => `
           <tr class="border-b">
+            <td class="p-4 whitespace-nowrap">${team.id}</td>
             <td class="p-4 whitespace-nowrap">${team.name}</td>
             <td class="p-4 whitespace-nowrap text-slate-500">${team.city}</td>
             <td class="p-4 text-slate-500">${team.titles}</td>
@@ -64,6 +65,7 @@ const Table = new Component({
       <table class="table-auto w-full text-left">
         <thead class="bg-slate-50 rounded-t-sm">
           <tr class="border-b">
+            <th scope="col" class="p-4 min-w-max whitespace-nowrap">ID</th>
             <th scope="col" class="p-4 min-w-max whitespace-nowrap">
               Nombre
               <img
