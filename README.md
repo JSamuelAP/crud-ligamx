@@ -30,9 +30,9 @@ npm run server
 npm run dev
 ```
 
-Los datos de los equipos los puedes ver en el [home de JSON-Server](localhost:3000)
+Los datos de los equipos los puedes ver en el [home de JSON-Server](http://localhost:3000)
 
-El sistema se encuentra en [localhost:5173](localhost:5173)
+El sistema se encuentra en [localhost:5173](http://localhost:5173)
 
 ## Licencia ⚖️
 
