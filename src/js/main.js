@@ -73,8 +73,7 @@ document.addEventListener("click", async (e) => {
 
 		// Enable last disabled delete button
 		// Disable only delete button sibling
-		const buttonDisabled = document.querySelector(".delete-button[disabled]");
-		if (buttonDisabled) buttonDisabled.disabled = false;
+		enableDeleteButton();
 		e.target.nextElementSibling.disabled = true;
 
 		// Prepare form
@@ -118,7 +117,13 @@ document.addEventListener("reset", (e) => {
 	buttonSubmit.classList.replace("update-icon", "create-icon");
 	buttonSubmit.value = "Crear";
 
-	// If some delete button is disabled, enable it
+	enableDeleteButton();
+});
+
+/**
+ * If there is a delete button that is disabled, enable it.
+ */
+function enableDeleteButton() {
 	const buttonDisabled = document.querySelector(".delete-button[disabled]");
 	if (buttonDisabled) buttonDisabled.disabled = false;
-});
+}
