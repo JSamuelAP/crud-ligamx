@@ -1,4 +1,4 @@
-import Table from "./components/Table.js";
+import Table from "../components/Table.js";
 
 /**
  * Set the state of the Table component and render it

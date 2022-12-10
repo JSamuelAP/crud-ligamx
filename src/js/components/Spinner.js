@@ -1,4 +1,4 @@
-import Component from "../Component.js";
+import Component from "../ui/Component.js";
 
 const Spinner = new Component({
 	el: "#spinner",

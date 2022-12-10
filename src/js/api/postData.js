@@ -1,5 +1,5 @@
 import getTeams from "./getData.js";
-import printTeams from "./printData.js";
+import printTeams from "../ui/printData.js";
 
 const postTeam = async (name, city, titles) => {
 	try {

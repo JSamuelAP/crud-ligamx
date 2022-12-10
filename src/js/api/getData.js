@@ -1,4 +1,4 @@
-import Spinner from "./components/Spinner.js";
+import Spinner from "../components/Spinner.js";
 
 /**
  * fetch the teams from the API

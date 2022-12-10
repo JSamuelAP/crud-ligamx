@@ -1,8 +1,8 @@
-import getTeams from "./getData.js";
-import printTeams from "./printData.js";
-import postTeam from "./postData.js";
-import putTeam from "./putData.js";
-import deleteTeam from "./deleteData.js";
+import getTeams from "./api/getData.js";
+import printTeams from "./ui/printData.js";
+import postTeam from "./api/postData.js";
+import putTeam from "./api/putData.js";
+import deleteTeam from "./api/deleteData.js";
 import Alert from "./components/Alert.js";
 
 const formHeading = document.querySelector("#form-heading");

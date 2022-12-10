@@ -1,4 +1,4 @@
-import Component from "../Component.js";
+import Component from "../ui/Component.js";
 
 const Alert = new Component({
 	el: "#alert",
