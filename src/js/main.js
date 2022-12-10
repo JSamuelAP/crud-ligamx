@@ -40,7 +40,7 @@ document.addEventListener("submit", async (e) => {
 		// POST
 		try {
 			const res = await postTeam(name, city, titles);
-			alertData = { message: res, type: "success" };
+			alertData = { message: await res, type: "success" };
 		} catch (error) {
 			alertData = { message: error, type: "error" };
 		}
@@ -48,7 +48,7 @@ document.addEventListener("submit", async (e) => {
 		// PUT
 		try {
 			const res = await putTeam(buttonSubmit.dataset.id, name, city, titles);
-			alertData = { message: res, type: "success" };
+			alertData = { message: await res, type: "success" };
 		} catch (error) {
 			alertData = { message: error, type: "error" };
 		}
@@ -101,7 +101,7 @@ document.addEventListener("click", async (e) => {
 		if (deleteConfirmed) {
 			try {
 				const res = await deleteTeam(e.target.dataset.id);
-				alert(res);
+				alert(await res);
 			} catch (error) {
 				alert(error);
 			}

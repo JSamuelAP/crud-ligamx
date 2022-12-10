@@ -7,7 +7,7 @@ import Table from "../components/Table.js";
 const printTeams = async () => {
 	try {
 		const res = await getTeams();
-		Table.setState({ teamsList: res, error: "" });
+		Table.setState({ teamsList: await res, error: "" });
 	} catch (error) {
 		Table.setState({ teamsList: [], error });
 	}
